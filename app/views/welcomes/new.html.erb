@@ -1,0 +1,6 @@
+<%= form_for @welcome do |welcome|%>
+  Email: <%= welcome.text_field :email %><br />
+  password: <%= welcome.password_field :password %><br />
+  <%= welcome.submit 'SignIN' %>
+<% end %>
+<%= link_to 'signUP', new_user_path %>

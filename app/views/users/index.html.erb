@@ -1,0 +1,16 @@
+<table>
+  <th>
+    <td>Name</td>
+    <td>Email</td>
+  </th>
+<tr>
+  <% @user.each do |show|%>
+  <td><%= show.name %></td>
+  <td><%= show.email %></td>
+  <td><%= link_to 'Edit', edit_user_path(show) %></td>
+  <td><%= link_to 'Show', user_path(show) %></td>
+  <td><%= link_to 'Delete', user_path(show), method: :delete, data:{confirm: "Are You sure"} %></td>
+</tr> 
+<% end %>
+</table>
+<%= link_to 'Signout', welcome_path(@user),method: :delete%>

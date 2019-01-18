@@ -1,0 +1,10 @@
+<%= form_for @user do |user|%>
+  <ul style="list-style-type: none">
+  Name: <li><%= user.text_field :name%></li>
+  DOB: <li><%= date_select("user","dob",start_year:1972,end_year:2036) %></li>
+  Email: <li><%= user.text_field :email%></li>
+  <%= user.submit 'Edit Profile'%>
+</ul>
+<% end %>
+<%= link_to 'Back', user_path(@user) %>
+<%= link_to 'Signout', welcome_path,method: :delete%>

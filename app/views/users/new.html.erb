@@ -1,0 +1,10 @@
+<%= form_for @user do |user|%>
+  <ul style="list-style-type: none">
+  Name: <li><%= user.text_field :name%></li>
+  ODB: <li><%= date_select("user","dob",start_year:1972,end_year:2036) %></li>
+  Email: <li><%= user.text_field :email%></li>
+  Confirm_email: <li><%= user.text_field :email_confirmation %></li>
+  password: <li><%= user.password_field :password %></li>
+  <%= user.submit 'Create Profile'%>
+</ul>
+<% end %>
